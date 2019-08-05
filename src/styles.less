@@ -1,0 +1,119 @@
+@color_1: var(--text-color-light);
+@color_2: white;
+@color_3: #3e3e3e;
+@color_4: #cfcfcf;
+@color_5: inherit;
+@font_family_1: Helvetica, sans-serif;
+@background_color_1: darkblue;
+@background_color_2: #3e3e3e;
+@background_color_3: #f3f3f3;
+@background_color_4: #f7f8fb;
+@background_color_5: inherit;
+@background_color_6: #efefef;
+@background_color_7: lightcoral;
+@background_color_8: lightgreen;
+
+body {
+	font-family: @font_family_1;
+	font-weight: 100;
+	margin: 0;
+	padding: 0;
+}
+.calendar__nav {
+	display: flex;
+	padding: 2rem 1rem;
+	justify-content: center;
+	align-items: center;
+	h2 {
+		font-size: 1.6rem;
+		font-weight: 100;
+		width: 50%;
+		font-family: @font_family_1;
+		text-align: center;
+	}
+	button {
+		width: 30px;
+		height: 30px;
+		padding: 0;
+		cursor: pointer;
+		text-align: center;
+		border: 0;
+		outline: 0;
+	}
+}
+.calendar__header {
+	display: flex;
+	div {
+		flex: 1;
+		text-transform: uppercase;
+		font-weight: 400;
+		color: @color_1;
+		font-size: 70%;
+		padding: 0.75em 0;
+		text-align: center;
+		border-bottom: 1px solid #eee;
+	}
+}
+.week {
+	display: flex;
+}
+.week__day {
+	position: relative;
+	padding: 1rem;
+	text-align: right;
+	flex: 1;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	cursor: pointer;
+	font-size: 12px;
+	border-radius: 0;
+	&:hover {
+		background-color: @background_color_1;
+		color: @color_2;
+		-webkit-transition: 0.25s ease-out;
+		-o-transition: 0.25s ease-out;
+		transition: 0.25s ease-out;
+	}
+}
+.week__day--today {
+	color: @color_2;
+	background-color: @background_color_2;
+}
+.week__day--weekend {
+	color: @color_3;
+	background-color: @background_color_3;
+}
+.week__day--past {
+	cursor: not-allowed;
+	color: @color_4;
+	background-color: @background_color_4;
+	&:hover {
+		background-color: @background_color_5;
+		color: @color_5;
+	}
+}
+.week__day--selected {
+	cursor: pointer;
+}
+.reminder__label {
+	width: 100%;
+	padding: 3px;
+	background-color: @background_color_6;
+}
+.reminder__label.reminder__label--work {
+	background-color: @background_color_7;
+}
+.reminder__label.reminder__label--calendar {
+	background-color: @background_color_8;
+}
+@media (min-width: 768px) {
+	.calendar {
+		width: 70%;
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 767px) {
+	.calendar {
+		width: 100%;
+	}
+}
